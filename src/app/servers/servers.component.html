@@ -10,6 +10,7 @@ class="form-control"
 [(ngModel)] = "serverName">
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p>{{serverName}}</p>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="serverCreated">Server was created, sever name is {{serverName}}</p>
+<!--<p>{{serverName}}</p>-->
+<app-server *ngFor="let server of servers"></app-server>
+
